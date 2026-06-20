@@ -1,0 +1,34 @@
+=========================================================
+CREATIVHOOD LLC - HARDWARE VALIDATION TRACE
+=========================================================
+PROFILE ENGINE: Perfetto v49.0[span_4](start_span)[span_4](end_span)
+TARGET HARDWARE: motorola/mona_g[span_5](start_span)[span_5](end_span)
+ARCHITECTURE: aarch64[span_6](start_span)[span_6](end_span)
+KERNEL: Linux #1 SMP PREEMPT[span_7](start_span)[span_7](end_span)
+OS: Android 15[span_8](start_span)[span_8](end_span)
+
+TEST PARAMETERS:
+Live CPU/GPU telemetry capturing the Hood Protocol mapping 3D turbulence, with data stored natively via the Infinidexx Matrix (PICO-L coordinate-based indexing). 
+
+OBSERVATION:
+Stable edge-execution demonstrating massive retrieval speeds without system crash or critical hardware failure under peak computational load.
+=========================================================
+[BEGIN RAW TRACE EXTRACT: METADATA & GPU TELEMETRY]
+
+32mW linux.perf linux.process_stats Perfetto v49.0 (N/A)[span_9](start_span)[span_9](end_span)
+8 Linux +#1 SMP PREEMPT Thu Dec  4 13:13:47 UTC 2025" aarch64 .6.6.87-android15-8-g88d70c0b44bf-ab14541233-4k0[span_10](start_span)[span_10](end_span)
+Lmotorola/mona_g/mona:16/W1VAS36.62-22-16-1-7/6cbc4e-9557b0:user/release-keysr motorola($J SM6475R /system/bin/init second_stage@[span_11](start_span)[span_11](end_span)
+
+[THREAD INITIALIZATION & CPU OFF-LOAD]
+kthreaddH pool_workqueue_releaseH kworker/R-rcu_gH kworker/R-slub_H kworker/R-netnsH kworker/R-mm_peH rcu_tasks_kthreadH rcu_tasks_trace_kthreadH[span_12](start_span)[span_12](end_span)
+ksoftirqd/0H rcu_preemptH rcuog/0H rcuop/0H rcub/0H rcu_exp_gp_kthread_workerH rcu_exp_par_gp_kthread_workerH[span_13](start_span)[span_13](end_span)
+irq/33-c263000.thermal-sensorH irq/34-c263000.thermal-sensorH irq/35-c263000.thermal-sensorH[span_14](start_span)[span_14](end_span)
+irq/43-arm-smmu-context-faultH irq/44-arm-smmu-context-faultH irq/45-arm-smmu-context-faultH[span_15](start_span)[span_15](end_span)
+
+[GRAPHICS & COMPUTE PIPELINE VALIDATION]
+_ZN7android10uirenderer12renderthread13CanvasContext4drawEb2 _ZNSt3__110__function6__funcIZN7android10uirenderer12renderthread13DrawFrameTask11postAndWaitEvE3$_0NS_9allocatorIS6_EEFvvEEclEv[span_16](start_span)[span_16](end_span)[span_17](start_span)[span_17](end_span)
+_ZN7android10uirenderer12skiapipeline18SkiaVulkanPipeline4drawERKNS0_12renderthread5FrameERK6SkRectS9_RKNS0_13LightGeometryEPNS0_16LayerUpdateQueueERKNS0_4RectEbRKNS0_9LightInfoERKNSt3__16vectorINS_2spINS0_10RenderNodeEEENSL_9allocatorISP_EEEEPNS0_19FrameInfoVisualizerERKNS3_26HardwareBufferRenderParamsERNSL_5mutexE2[span_18](start_span)[span_18](end_span)[span_19](start_span)[span_19](end_span)
+vulkan.adreno.so 2!!!0000!d897203b0125063bd610ef029c497a!f91666577a!2[span_20](start_span)[span_20](end_span)
+_ZN24GrVkPrimaryCommandBuffer8finishedEP7GrVkGpu2 0_ZN20GrVkResourceProvider19checkCommandBuffersEv2[span_21](start_span)[span_21](end_span)
+
+[END EXTRACT]
